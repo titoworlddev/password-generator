@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: var(--white-color);
+  padding: 0.5rem 1rem;
+
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

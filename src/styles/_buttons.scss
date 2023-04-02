@@ -1,0 +1,19 @@
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  background-color: var(--white-color);
+  color: var(--black-color);
+
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+
+  &:hover {
+    background-color: #d4d4d4;
+  }
+}
