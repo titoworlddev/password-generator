@@ -9,14 +9,12 @@
     </div>
 
     <form class="password-form">
-      <p class="length-value-text">Password length
-        <span class="value">16</span>
-      </p>
-      <div class="slider-container">
-        <input class="slider" type="range" min="4" max="32" value="16">
+      <div class="range-slider">
+        <input class="range-slider__range" type="range" value="100" min="0" max="500">
+        <span class="range-slider__value">0</span>
       </div>
 
-      <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your password">
+      <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
 
       <label class="checkbox" for="allow-uppercase-checkbox">Allow uppercase
         <input type="checkbox" name="allow-uppercase-checkbox" id="allow-uppercase-checkbox">
@@ -49,15 +47,24 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.slider-bg {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  z-index: -1;
 }
 
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  background: transparent;
   height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -67,6 +74,7 @@
 .slider:hover {
   opacity: 1;
 }
+
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -96,7 +104,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: var(--white-color);
   border-radius: 8px;
+  width: 100%;
+  height: 100px;
+  margin: 2rem 0;
 }
 </style>
