@@ -10,8 +10,10 @@
 
     <form class="password-form">
       <div class="range-slider">
+        <p class="length-container">Password length
+          <span class="length-container__value">0</span>
+        </p>
         <input class="range-slider__range" type="range" value="100" min="0" max="500">
-        <span class="range-slider__value">0</span>
       </div>
 
       <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
@@ -28,9 +30,11 @@
         <input type="checkbox" name="allow-symbols-checkbox" id="allow-symbols-checkbox">
       </label>
 
-      <button @click.prevent="">
-        Generate
-      </button>
+      <div class="btn-container">
+        <button @click.prevent="">
+          Generate
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -94,7 +98,7 @@
   cursor: pointer;
 }
 
-.length-value-text {
+.length-container {
   display: flex;
   justify-content: space-between;
 }
