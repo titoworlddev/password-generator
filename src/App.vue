@@ -13,17 +13,9 @@
 
       <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
 
-      <label class="checkbox" for="allow-uppercase-checkbox">Allow uppercase
-        <input type="checkbox" name="allow-uppercase-checkbox" id="allow-uppercase-checkbox">
-      </label>
-
-      <label class="checkbox" for="allow-numbers-checkbox">Allow numbers
-        <input type="checkbox" name="allow-numbers-checkbox" id="allow-numbers-checkbox">
-      </label>
-
-      <label class="checkbox" for="allow-symbols-checkbox">Allow symbols
-        <input type="checkbox" name="allow-symbols-checkbox" id="allow-symbols-checkbox">
-      </label>
+      <CheckBox label="Allow uppercase" id="allow-uppercase" />
+      <CheckBox label="Allow numbers" id="allow-numbers" />
+      <CheckBox label="Allow symbols" id="allow-symbols" />
 
       <div class="btn-container">
         <button @click.prevent="">
@@ -36,10 +28,12 @@
 
 <script>
 import RangeSlider from '@/components/RangeSlider.vue'
+import CheckBox from './components/CheckBox.vue';
 
 export default {
   components: {
     RangeSlider,
+    CheckBox
   },
 }
 
