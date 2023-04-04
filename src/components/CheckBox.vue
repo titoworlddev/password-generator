@@ -27,6 +27,12 @@ export default {
 </script>
 
 <style scoped>
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .checkbox input[type="checkbox"] {
   display: none;
 }
