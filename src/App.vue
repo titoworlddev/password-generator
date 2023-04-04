@@ -9,10 +9,12 @@
     </div>
 
     <form class="password-form">
+      <CheckBox label="Custom password" id="custom-password" />
+      <!-- Si custom-password esta checked entonces se vera esto y sino lo otro que es por defecto -->
+      <!-- <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
+        <CheckBox label="Fill spaces with symbols" id="fill-spaces" /> -->
+
       <RangeSlider />
-
-      <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
-
       <CheckBox label="Allow uppercase" id="allow-uppercase" />
       <CheckBox label="Allow numbers" id="allow-numbers" />
       <CheckBox label="Allow symbols" id="allow-symbols" />
