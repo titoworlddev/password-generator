@@ -1,14 +1,20 @@
 <template>
   <div class="range-slider">
     <p class="length-container">Password length
-      <span class="length-container__value">0</span>
+      <span class="length-container__value">{{ passwordLength }}</span>
     </p>
-    <input class="range-slider__range" type="range" value="100" min="0" max="500">
+    <input v-model="passwordLength" class="range-slider__range" type="range" min="4" max="32" name="passwordLength"
+      id="passwordLength">
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      passwordLength: 16
+    }
+  }
 };
 </script>
 
