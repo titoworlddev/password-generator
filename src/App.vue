@@ -71,8 +71,13 @@ export default {
   width: 100%;
   height: 100px;
   margin: 2rem 0;
-  padding: 0 1rem;
+  padding: 1rem;
   color: var(--black-color);
   font-weight: 700;
+}
+
+.result {
+  /* To avoid text overflow */
+  word-break: break-all;
 }
 </style>
