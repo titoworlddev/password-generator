@@ -4,7 +4,7 @@
 
     <label :for="id">
       <div class="switch">
-        <input type="checkbox" :name="id" :id="id">
+        <input type="checkbox" :name="id" :id="id" :checked="checked">
         <div class="switch__circle"></div>
       </div>
     </label>
@@ -21,6 +21,10 @@ export default {
     id: {
       type: String,
       required: true
+    },
+    checked: {
+      type: Boolean,
+      default: false
     }
   }
 }
