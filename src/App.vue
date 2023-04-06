@@ -4,7 +4,7 @@
 
     <div class="result-container">
       <p class="result">
-        <!-- {{ password }} -->
+        {{ password }}
       </p>
     </div>
 
@@ -39,10 +39,17 @@ export default {
     RangeSlider,
     CheckBox
   },
+
+  data() {
+    return {
+      password: ''
+    }
+  },
+
   methods: {
     generate(e) {
       const formData = Object.fromEntries(new FormData(e.target));
-      generatePassword({ ...formData });
+      this.password = generatePassword({ ...formData });
     }
   }
 }
@@ -64,5 +71,8 @@ export default {
   width: 100%;
   height: 100px;
   margin: 2rem 0;
+  padding: 0 1rem;
+  color: var(--black-color);
+  font-weight: 700;
 }
 </style>
