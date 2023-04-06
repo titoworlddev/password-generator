@@ -8,19 +8,20 @@
       </p>
     </div>
 
-    <form class="password-form">
-      <CheckBox label="Custom password" id="custom-password" />
+    <form @submit.prevent="generate" class="password-form">
       <!-- Si custom-password esta checked entonces se vera esto y sino lo otro que es por defecto -->
+      <!-- <CheckBox label="Custom password" id="custom-password" /> -->
       <!-- <input type="text" name="custom-password-input" id="custom-password-input" placeholder="Write your custom password">
         <CheckBox label="Fill spaces with symbols" id="fill-spaces" /> -->
 
       <RangeSlider />
-      <CheckBox label="Allow uppercase" id="allow-uppercase" />
-      <CheckBox label="Allow numbers" id="allow-numbers" />
-      <CheckBox label="Allow symbols" id="allow-symbols" />
+      <CheckBox label="Allow lowercase" id="hasLowercase" checked />
+      <CheckBox label="Allow uppercase" id="hasUppercase" checked />
+      <CheckBox label="Allow numbers" id="hasNumbers" checked />
+      <CheckBox label="Allow symbols" id="hasSymbols" checked />
 
       <div class="btn-container">
-        <button @click.prevent="">
+        <button>
           Generate
         </button>
       </div>
@@ -31,12 +32,19 @@
 <script>
 import RangeSlider from '@/components/RangeSlider.vue'
 import CheckBox from './components/CheckBox.vue';
+import { generatePassword } from './utils/generatePassword';
 
 export default {
   components: {
     RangeSlider,
     CheckBox
   },
+  methods: {
+    generate(e) {
+      const formData = Object.fromEntries(new FormData(e.target));
+      generatePassword({ ...formData });
+    }
+  }
 }
 
 </script>
