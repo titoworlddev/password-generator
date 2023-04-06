@@ -1,9 +1,9 @@
 export function generatePassword({
-  length = 16,
-  hasNumbers = true,
-  hasSymbols = true,
-  hasLowercase = true,
-  hasUppercase = true
+  passwordLength = 16,
+  hasNumbers = false,
+  hasSymbols = false,
+  hasLowercase = false,
+  hasUppercase = false
 } = {}) {
   const symbols = '!@#$%^&*()_-+={}[]|:"\'<>.?\\/`~';
   const specialSymbols = ',;';
@@ -19,13 +19,13 @@ export function generatePassword({
   if (hasLowercase) characters += lowercase;
   if (hasUppercase) characters += uppercase;
   const charList = characters.split('');
-  const randomIndexForSpecial = Math.floor(Math.random() * length);
+  const randomIndexForSpecial = Math.floor(Math.random() * passwordLength);
   const randomSpecialSymbol = Math.floor(Math.random() * specialSymbols.length);
 
-  for (var i = 0; i < length; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * charList.length);
 
-    if (i === randomIndexForSpecial) {
+    if (i === randomIndexForSpecial && hasSymbols) {
       result += specialSymbols[randomSpecialSymbol];
     } else {
       result += charList[randomIndex];
