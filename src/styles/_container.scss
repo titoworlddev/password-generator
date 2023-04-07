@@ -1,4 +1,13 @@
 .container {
-  width: 80%;
-  margin: 0 auto;
+  min-width: 480px;
+  border-radius: 16px;
+  background-color: #7e80803a;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+
+@media screen and (max-width: calc(480px + 2rem)) {
+  .container {
+    min-width: calc(100% - 2rem);
+  }
 }

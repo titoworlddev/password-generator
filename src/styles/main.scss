@@ -2,6 +2,7 @@
 @import 'container';
 @import 'forms';
 @import 'buttons';
+@import 'scrollbar';
 
 * {
   margin: 0;
@@ -16,4 +17,12 @@ html {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--bg-color);
   color: var(--white-color);
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
