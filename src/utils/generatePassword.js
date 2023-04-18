@@ -34,3 +34,39 @@ export function generatePassword({
 
   return result;
 }
+
+export function generateCustomPassword({
+  customText = '',
+  fillWithSymbols = false
+} = {}) {
+  const symbols = '!@#$%^&*()_-+={}[]|:"\'<>.?\\/`~';
+  const specialSymbols = ',;';
+
+  customText = customText
+    .split('')
+    .sort(() => Math.random() - 0.5)
+    .join('');
+
+  if (fillWithSymbols) {
+    let hasSpecialSymbol = false;
+    customText = customText
+      .split('')
+      .map(char => {
+        if (char === ' ' && !hasSpecialSymbol) {
+          hasSpecialSymbol = true;
+          return specialSymbols[
+            Math.floor(Math.random() * specialSymbols.length)
+          ];
+        } else {
+          return char === ' '
+            ? symbols[Math.floor(Math.random() * symbols.length)]
+            : char;
+        }
+      })
+      .join('');
+  } else {
+    customText = customText.replace(/\s/g, '');
+  }
+
+  return customText;
+}
