@@ -1,5 +1,5 @@
 export async function copyToClipboard() {
-  const password = document.querySelector('.result').innerHTML;
+  const password = document.querySelector('.result').textContent;
   try {
     await navigator.clipboard.writeText(password);
   } catch (err) {
