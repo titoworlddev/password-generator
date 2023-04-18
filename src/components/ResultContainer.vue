@@ -30,7 +30,9 @@
 
     methods: {
       showCopyFeedback() {
+        const password = document.querySelector('.result').innerHTML;
         const copyFeedback = document.querySelector('.copy-feedback');
+        if (password === '') return;
         copyFeedback.style.opacity = 1;
         setTimeout(() => {
           copyFeedback.style.opacity = 0;
