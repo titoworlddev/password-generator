@@ -71,7 +71,14 @@
     methods: {
       generatePassword(e) {
         const formData = Object.fromEntries(new FormData(e.target));
-        this.password = generatePassword({ ...formData });
+        if (
+          formData.hasLowercase === 'on' ||
+          formData.hasNumbers === 'on' ||
+          formData.hasSymbols === 'on' ||
+          formData.hasUppercase === 'on'
+        )
+          this.password = generatePassword({ ...formData });
+        else this.password = 'Please select at least one option!';
       },
       generateCustomPassword(e) {
         const formData = Object.fromEntries(new FormData(e.target));
