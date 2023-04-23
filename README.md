@@ -4,7 +4,7 @@ This is a practice project with Vue.JS, it is a password generator that, in addi
 
 ## Screenshots
 
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px">
-  <img width="150" src="screenshot.png" alt="Screenshot 1">
-  <img width="150" src="screenshot2.png" alt="Screenshot 2">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px">
+  <img width="250" src="screenshot.png" alt="Screenshot 1">
+  <img width="250" src="screenshot2.png" alt="Screenshot 2">
 </div>
