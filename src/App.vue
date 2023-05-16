@@ -47,7 +47,7 @@
 
 <script>
   import RangeSlider from '@/components/RangeSlider.vue';
-  import CheckBox from './components/CheckBox.vue';
+  import CheckBox from './components/CheckBox/CheckBox.vue';
   import {
     generatePassword,
     generateCustomPassword
